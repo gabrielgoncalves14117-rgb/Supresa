@@ -1,119 +1,157 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pra Você ❤️</title>
+    <title>KG Store FF - Passe Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            margin: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            overflow-x: hidden;
-            min-height: 100vh;
+            background: #0a0a14;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            background: #0a0a14;
+            padding: 20px 25px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #1f1f3a;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            max-width: 400px;
-            margin: 20px;
-            position: relative;
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #8b5cf6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #ff4d6d;
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
-        }
-        h1 {
-            color: #c9184a;
-            font-size: 28px;
-            margin: 20px 0 10px 0;
-        }
-        .frase {
+
+        .logo::before {
+            content: '\f11b';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            background: #8b5cf6;
+            padding: 8px;
+            border-radius: 8px;
             font-size: 18px;
-            color: #590d22;
-            margin: 20px 0;
-            line-height: 1.5;
         }
-        .coracao {
-            font-size: 40px;
-            animation: pulsar 1.5s infinite;
+
+        main {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
         }
-        @keyframes pulsar {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+
+        main h1 {
+            font-size: 32px;
+            color: #a78bfa;
+            margin-bottom: 12px;
         }
-        /* Corações caindo */
-        .hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+
+        .subtitulo {
+            color: #9ca3af;
+            margin-bottom: 35px;
+            font-size: 15px;
         }
-        .heart {
-            position: absolute;
+
+        .card {
+            background: #151528;
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+        }
+
+        .icone {
+            background: #8b5cf6;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px auto;
+            font-size: 26px;
+        }
+
+        .card h3 {
             font-size: 20px;
-            animation: cair 6s linear infinite;
-            opacity: 0.6;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
-        @keyframes cair {
-            0% { transform: translateY(-10vh) rotate(0deg); }
-            100% { transform: translateY(110vh) rotate(360deg); }
+
+        .card p {
+            color: #9ca3af;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .link-contato {
+            color: #a78bfa;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .btn-whats {
+            background: #25D366;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .preco {
+            font-size: 28px;
+            color: #00ff88;
+            font-weight: bold;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
-    <!-- Corações caindo no fundo -->
-    <div class="hearts" id="hearts"></div>
+    <header>
+        <div class="logo">KG STORE</div>
+    </header>
 
-    <div class="container">
-        <div class="coracao">❤️</div>
-        <h1>Pra Maria Vitória</h1>
-        
-        <!-- TROCA O LINK DA FOTO AQUI -->
-        <img src="mariavi4414_14050217_225744034.jpg" alt="Maria Vitória">
-        
-        <p class="frase">
-            Você é perfeita Maria Vitória, fiz até essa programação pra você heheeh 💕
-        </p>
-        <p class="frase">
-            Desde que te conheci, meu mundo ficou mais bonito. <br>
-            Te amo! 
-        </p>
-        <div class="coracao">💖</div>
-    </div>
+    <main>
+        <h1>Entre em Contato</h1>
+        <p class="subtitulo">Passe Premium FF por R$ 6,99. Entrega em até 10min.</p>
 
-    <script>
-        // Cria corações caindo
-        const heartsContainer = document.getElementById('hearts');
-        const heartSymbols = ['❤️', '💖', '💕', '💗', '💓'];
-        
-        function criarCoracao() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
-            heartsContainer.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
-        setInterval(criarCoracao, 300);
-    </script>
+        <div class="card">
+            <div class="icone"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3>WhatsApp</h3>
+            <p>Atendimento rápido e direto</p>
+            <a href="https://wa.me/5577981047147?text=Quero%20o%20Passe%20de%206,99" class="btn-whats">Chamar no WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <div class="icone"><i class="fa-solid fa-envelope"></i></div>
+            <h3>Email</h3>
+            <p>Suporte para dúvidas</p>
+            <a href="mailto:ktxgabriel13@gmail.com" class="link-contato">ktxgabriel13@gmail.com</a>
+        </div>
+
+        <div class="card">
+            <div class="icone"><i class="fa-solid fa-tag"></i></div>
+            <h3>Passe Premium</h3>
+            <p>Produto em destaque</p>
+            <div class="preco">R$ 6,99</div>
+            <p>Pagamento via Pix</p>
+        </div>
+    </main>
 </body>
 </html>
