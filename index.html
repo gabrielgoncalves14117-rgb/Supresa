@@ -21,7 +21,7 @@
     position: fixed;
     color: #ff2d75;
     font-size: 20px;
-    animation: fall 8s linear infinite, blink 2s ease-in-out infinite;
+    animation: fall 8s linear infinite;
     pointer-events: none;
     z-index: 1;
   }
@@ -29,7 +29,6 @@
     0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
     100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
   }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
   .container {
     position: relative;
     z-index: 2;
@@ -40,19 +39,12 @@
     border-radius: 20px;
     padding: 40px 30px;
     box-shadow: 0 0 40px rgba(255, 45, 117, 0.4);
-    animation: glow 3s ease-in-out infinite;
-  }
-  @keyframes glow {
-    0%, 100% { box-shadow: 0 0 40px rgba(255, 45, 117, 0.4); }
-    50% { box-shadow: 0 0 60px rgba(255, 45, 117, 0.7); }
   }
   h1 {
     font-size: 2.5em;
     color: #ff4d8c;
     margin-bottom: 20px;
-    animation: pulse 2s ease-in-out infinite;
   }
-  @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
   .fotos {
     display: flex;
     gap: 15px;
@@ -66,9 +58,7 @@
     object-fit: cover;
     border-radius: 15px;
     border: 3px solid #ff2d75;
-    transition: transform 0.3s;
   }
-  .fotos img:hover { transform: scale(1.1) rotate(3deg); }
   .texto {
     background: rgba(255, 45, 117, 0.1);
     border-left: 4px solid #ff2d75;
@@ -81,7 +71,6 @@
   }
   .declaracao {
     font-size: 1.4em;
-    text-align: center;
     color: #ff9ec7;
     font-weight: bold;
     padding: 25px;
@@ -89,11 +78,6 @@
     border: 2px solid #ff2d75;
     border-radius: 15px;
     margin: 30px 0;
-    animation: pulseCoracao 1.5s ease-in-out infinite;
-  }
-  @keyframes pulseCoracao {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 45, 117, 0.5); }
-    50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(255, 45, 117, 0.8); }
   }
   .botao {
     margin-top: 20px;
@@ -104,18 +88,12 @@
     color: white;
     font-size: 1.2em;
     cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 5px 20px rgba(255, 45, 117, 0.5);
     font-family: 'Georgia', serif;
   }
-  .botao:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(255, 45, 117, 0.8); }
+  iframe { display: none; }
 </style>
 </head>
 <body>
-
-<audio id="musica" loop>
-  <source src="I Wanna Be Yours(MP3_160K).mp3" type="audio/mpeg">
-</audio>
 
 <div class="container">
   <h1>Volta pra mim? ❤️</h1>
@@ -134,9 +112,12 @@
     porfavor vamos tentar denovo com mais maturidade, demorei meses fazendo isso aqui pra vc.. vamos fazer dar certo ❤️
   </div>
   
-  <button class="botao" id="btnMusica" onclick="tocarMusica()">🎵 Tocar "I Wanna Be Yours"</button>
+  <button class="botao" id="btnMusica" onclick="tocarMusica()">🎵 Tocar Música</button>
   <button class="botao" onclick="alert('Te amo. Por favor volta ❤️')">Volta pra mim?</button>
 </div>
+
+<!-- Música do YouTube - I Wanna Be Yours -->
+<iframe id="youtube" width="0" height="0" src="https://www.youtube.com/embed/FnT2m1BgKGI?autoplay=1&loop=1&playlist=FnT2m1BgKGI&controls=0" frameborder="0" allow="autoplay"></iframe>
 
 <script>
   function criarCoracao() {
@@ -145,20 +126,14 @@
     heart.classList.add('heart');
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.animationDuration = Math.random() * 3 + 5 + 's';
-    heart.style.fontSize = Math.random() * 20 + 15 + 'px';
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 8000);
   }
   setInterval(criarCoracao, 250);
 
   function tocarMusica() {
-    const audio = document.getElementById('musica');
-    audio.volume = 0.6;
-    audio.play().then(() => {
-      document.getElementById('btnMusica').style.display = 'none';
-    }).catch(() => {
-      alert('Música não encontrada. Coloca o arquivo I Wanna Be Yours(MP3_160K).mp3 na mesma pasta do site.');
-    });
+    document.getElementById('youtube').style.display = 'block';
+    document.getElementById('btnMusica').style.display = 'none';
   }
 </script>
 
