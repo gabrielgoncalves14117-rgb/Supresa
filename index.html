@@ -79,18 +79,17 @@
     border-radius: 15px;
     margin: 30px 0;
   }
-  .botao {
-    margin-top: 20px;
-    padding: 15px 40px;
-    background: linear-gradient(45deg, #ff2d75, #ff4d8c);
-    border: none;
-    border-radius: 50px;
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    font-family: 'Georgia', serif;
+  .musica-box {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 45, 117, 0.1);
+    border-radius: 15px;
   }
-  iframe { display: none; }
+  .musica-box p {
+    color: #ff9ec7;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+  }
 </style>
 </head>
 <body>
@@ -112,12 +111,13 @@
     porfavor vamos tentar denovo com mais maturidade, demorei meses fazendo isso aqui pra vc.. vamos fazer dar certo ❤️
   </div>
   
-  <button class="botao" id="btnMusica" onclick="tocarMusica()">🎵 Tocar Música</button>
-  <button class="botao" onclick="alert('Te amo. Por favor volta ❤️')">Volta pra mim?</button>
+  <div class="musica-box">
+    <p>🎵 Aperta play aqui pra tocar nossa música:</p>
+    <iframe width="100%" height="80" src="https://www.youtube.com/embed/FnT2m1BgKGI" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+  </div>
+  
+  <button class="botao" style="padding: 15px 40px; background: linear-gradient(45deg, #ff2d75, #ff4d8c); border: none; border-radius: 50px; color: white; font-size: 1.2em; cursor: pointer; font-family: 'Georgia', serif;" onclick="alert('Te amo. Por favor volta ❤️')">Volta pra mim?</button>
 </div>
-
-<!-- Música do YouTube - I Wanna Be Yours -->
-<iframe id="youtube" width="0" height="0" src="https://www.youtube.com/embed/FnT2m1BgKGI?autoplay=1&loop=1&playlist=FnT2m1BgKGI&controls=0" frameborder="0" allow="autoplay"></iframe>
 
 <script>
   function criarCoracao() {
@@ -130,11 +130,6 @@
     setTimeout(() => heart.remove(), 8000);
   }
   setInterval(criarCoracao, 250);
-
-  function tocarMusica() {
-    document.getElementById('youtube').style.display = 'block';
-    document.getElementById('btnMusica').style.display = 'none';
-  }
 </script>
 
 </body>
